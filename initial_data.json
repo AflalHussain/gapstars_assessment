@@ -1,0 +1,38 @@
+[
+  {
+    "model": "sales_app.product",
+    "pk": 1,
+    "fields": {
+      "name": "Spark Plug",
+      "description": "High-performance spark plug for improved ignition.",
+      "category": "Engine Parts",
+      "manufacturer": "ABC Motors",
+      "price": 9.99,
+      "stock_quantity": 100
+    }
+  },
+  {
+    "model": "sales_app.product",
+    "pk": 2,
+    "fields": {
+      "name": "Oil Filter",
+      "description": "Premium oil filter for efficient engine oil filtration.",
+      "category": "Engine Parts",
+      "manufacturer": "ABC Motors",
+      "price": 12.99,
+      "stock_quantity": 50
+    }
+  },
+  {
+    "model": "sales_app.product",
+    "pk": 3,
+    "fields": {
+      "name": "Shock Absorber",
+      "description": "Gas-filled shock absorber for a smoother ride.",
+      "category": "Suspension Parts",
+      "manufacturer": "ABC Motors",
+      "price": 49.99,
+      "stock_quantity": 30
+    }
+  }
+]
