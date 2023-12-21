@@ -90,7 +90,7 @@ DATABASES = {
         'USER': os.environ.get('DB_USER', 'autocompany_db_user'),
         'PASSWORD': os.environ.get('DB_PASSWORD', 'password'),
         'HOST': 'localhost',
-        'PORT': '5433',
+        'PORT': '5432',
     }
 }
 
