@@ -1,0 +1,108 @@
+{
+	"info": {
+		"_postman_id": "56209892-323f-49d8-85b7-1dd3bc5b6468",
+		"name": "autocompany_requests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27008218"
+	},
+	"item": [
+		{
+			"name": "order",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/products",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "product-detail",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/products/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add-to-cart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"product\":1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/cart",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "remove-from-cart",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "cart-items-list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/cart",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"cart"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
