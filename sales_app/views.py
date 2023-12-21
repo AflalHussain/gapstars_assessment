@@ -9,22 +9,22 @@ from sales_app.serializers import ProductSerializer, CartItemSerializer, OrderSe
 
 
 class ProductsListView(APIView):
-    def get(self):
+    def get(self, request):
         products = Product.objects.all()
         serializer = ProductSerializer(products, many=True)
         return Response(serializer.data)
 
 
 class ProductDetailsView(APIView):
-    def get(self):
+    def get(self, request, product_id):
         product = get_object_or_404(Product, pk=product_id)
         serializer = ProductSerializer(product)
         return Response(serializer.data)
 
 
 class DeleteFromCartView(APIView):
-    def delete(self, product_id):
-        cart_item = get_object_or_404(CartItem, product_id=product_id)
+    def delete(self, request, cart_item_id):
+        cart_item = get_object_or_404(CartItem, pk=cart_item_id)
         cart_item.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
@@ -36,28 +36,25 @@ class CartView(APIView):
     def post(self, request):
         product_id = request.data.get('product')
         product = get_object_or_404(Product, pk=product_id)
-        # Check if the product is already in the cart
+        # Addd product to cart if it does not exist already
         cart_item, created = CartItem.objects.get_or_create(product=product)
 
         if not created:
             cart_item.quantity += 1
             cart_item.save()
-
         serializer = self.serializer_class(cart_item)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
-    def get(self):
+    def get(self, request):
         cart_items = CartItem.objects.all()
         serializer_class = CartItemSerializer(cart_items, many=True)
         return Response(serializer_class.data)
 
 
 class CreateOrderView(APIView):
-    # permission_classes = [IsAuthenticated]
 
     def post(self, request):
-        # Retrieve user's cart items
-        cart_items = CartItem.objects.all()  # filter(cart=request.user.cart)
+        cart_items = CartItem.objects.all()
 
         if not cart_items.exists():
             return Response({"message": "Your cart is empty"}, status=status.HTTP_400_BAD_REQUEST)
@@ -85,9 +82,8 @@ class CreateOrderView(APIView):
                 subtotal=cart_item.product.price * cart_item.quantity
             )
 
-        # Clear the user's cart
+        # Clear the cart
         cart_items.delete()
 
-        # Serialize and return the order details
         serializer = OrderSerializer(order)
         return Response(serializer.data, status=status.HTTP_201_CREATED)

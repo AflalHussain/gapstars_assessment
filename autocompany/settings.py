@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -86,9 +86,9 @@ WSGI_APPLICATION = 'autocompany.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'autocompany_db',
-        'USER': 'autocompany_db_user',
-        'PASSWORD': 'password',
+        'NAME': os.environ.get('DB_NAME', 'autocompany_db'),
+        'USER': os.environ.get('DB_USER', 'autocompany_db_user'),
+        'PASSWORD': os.environ.get('DB_PASSWORD', 'password'),
         'HOST': 'localhost',
         'PORT': '5433',
     }
