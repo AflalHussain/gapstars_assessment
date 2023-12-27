@@ -1,6 +1,6 @@
 FROM python:3.10
 LABEL author='Label A'
-
+USER root
 WORKDIR /app
 
 # Environment
@@ -16,9 +16,10 @@ COPY requirements.txt /app/
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy our codebase into the container
-COPY . .
+COPY . /app/
 
 RUN ./manage.py collectstatic --noinput
+RUN ./manage.py makemigrations sales_app
 
 # Ops Parameters
 ENV WORKERS=2
@@ -27,4 +28,6 @@ ENV PYTHONUNBUFFERED=1
 
 EXPOSE ${PORT}
 
-CMD uwsgi --http :${PORT} --processes ${WORKERS} --static-map /static=/static --module autocompany.wsgi:application
+RUN chmod +x /app/script.sh
+ENTRYPOINT ["/bin/bash","-c","/app/script.sh"]
+# CMD uwsgi --http :${PORT} --processes ${WORKERS} --static-map /static=/static --module autocompany.wsgi:application

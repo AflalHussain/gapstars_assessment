@@ -1,0 +1,36 @@
+# docker-compose.yml
+
+version: '3'
+
+services:
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: autocompany_db
+      POSTGRES_USER: autocompany_db_user
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # command: /bin/bash -c /app/script.sh
+    volumes:
+      - .:/app
+    ports:
+      - "8000:80"
+    depends_on:
+      - postgres
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: autocompany_db
+      DB_USER: autocompany_db_user
+      DB_PASSWORD: password
+
+volumes:
+  postgres_data:
