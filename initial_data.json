@@ -1,38 +1,159 @@
 [
-  {
-    "model": "sales_app.product",
-    "pk": 1,
-    "fields": {
-      "name": "Spark Plug",
-      "description": "High-performance spark plug for improved ignition.",
-      "category": "Engine Parts",
-      "manufacturer": "ABC Motors",
-      "price": 9.99,
-      "stock_quantity": 100
+    {
+        "model": "sales_app.product",
+        "pk": 1,
+        "fields": {
+            "name": "Spark Plug",
+            "description": "High-performance spark plug for improved ignition.",
+            "category": "Engine Parts",
+            "manufacturer": "ABC Motors",
+            "price": 9.99,
+            "stock_quantity": 100
+        }
+    },
+    {
+        "model": "sales_app.product",
+        "pk": 2,
+        "fields": {
+            "name": "Oil Filter",
+            "description": "Premium oil filter for efficient engine oil filtration.",
+            "category": "Engine Parts",
+            "manufacturer": "ABC Motors",
+            "price": 12.99,
+            "stock_quantity": 50
+        }
+    },
+    {
+        "model": "sales_app.product",
+        "pk": 3,
+        "fields": {
+            "name": "Shock Absorber",
+            "description": "Gas-filled shock absorber for a smoother ride.",
+            "category": "Suspension Parts",
+            "manufacturer": "ABC Motors",
+            "price": 49.99,
+            "stock_quantity": 30
+        }
+    },
+
+    {
+        "model": "sales_app.product",
+        "pk": 4,
+        "fields": {
+            "name": "Brake Pads",
+            "description": "High-quality brake pads for superior stopping power.",
+            "category": "Brake System",
+            "manufacturer": "XYZ Brakes",
+            "price": 29.99,
+            "stock_quantity": 80
+        }
+    },
+    {
+        "model": "sales_app.product",
+        "pk": 5,
+        "fields": {
+            "name": "Air Filter",
+            "description": "Reusable air filter for improved engine performance.",
+            "category": "Engine Parts",
+            "manufacturer": "DEF Filters",
+            "price": 14.99,
+            "stock_quantity": 60
+        }
+    },
+    {
+        "model": "sales_app.product",
+        "pk": 6,
+        "fields": {
+            "name": "Tire Pressure Gauge",
+            "description": "Digital tire pressure gauge for accurate readings.",
+            "category": "Tools and Accessories",
+            "manufacturer": "GHI Tools",
+            "price": 19.99,
+            "stock_quantity": 40
+        }
+    },
+    {
+        "model": "sales_app.product",
+        "pk": 7,
+        "fields": {
+            "name": "Wiper Blades",
+            "description": "All-weather wiper blades for clear visibility.",
+            "category": "Exterior Accessories",
+            "manufacturer": "JKL Auto",
+            "price": 16.99,
+            "stock_quantity": 55
+        }
+    },
+    {
+        "model": "sales_app.product",
+        "pk": 8,
+        "fields": {
+            "name": "Car Battery",
+            "description": "Maintenance-free car battery with long life.",
+            "category": "Electrical System",
+            "manufacturer": "MNO Batteries",
+            "price": 79.99,
+            "stock_quantity": 25
+        }
+    },
+    {
+        "model": "sales_app.product",
+        "pk": 9,
+        "fields": {
+            "name": "Transmission Fluid",
+            "description": "Synthetic transmission fluid for smooth gear shifting.",
+            "category": "Fluids and Lubricants",
+            "manufacturer": "PQR Lubricants",
+            "price": 17.99,
+            "stock_quantity": 70
+        }
+    },
+    {
+        "model": "sales_app.product",
+        "pk": 10,
+        "fields": {
+            "name": "Car Wax",
+            "description": "Premium car wax for a glossy and protective finish.",
+            "category": "Detailing Products",
+            "manufacturer": "STU Detailing",
+            "price": 22.99,
+            "stock_quantity": 45
+        }
+    },
+    {
+        "model": "sales_app.product",
+        "pk": 11,
+        "fields": {
+            "name": "Oxygen Sensor",
+            "description": "OEM oxygen sensor for optimal fuel efficiency.",
+            "category": "Emission Control",
+            "manufacturer": "VWX Sensors",
+            "price": 39.99,
+            "stock_quantity": 35
+        }
+    },
+    {
+        "model": "sales_app.product",
+        "pk": 12,
+        "fields": {
+            "name": "Car Wash Kit",
+            "description": "Complete car wash kit for a professional clean.",
+            "category": "Detailing Products",
+            "manufacturer": "YZ Detailing",
+            "price": 32.99,
+            "stock_quantity": 20
+        }
+    },
+    {
+        "model": "sales_app.product",
+        "pk": 13,
+        "fields": {
+            "name": "Cabin Air Filter",
+            "description": "Activated carbon cabin air filter for clean air inside the car.",
+            "category": "Interior Accessories",
+            "manufacturer": "ABC Filters",
+            "price": 18.99,
+            "stock_quantity": 50
+        }
     }
-  },
-  {
-    "model": "sales_app.product",
-    "pk": 2,
-    "fields": {
-      "name": "Oil Filter",
-      "description": "Premium oil filter for efficient engine oil filtration.",
-      "category": "Engine Parts",
-      "manufacturer": "ABC Motors",
-      "price": 12.99,
-      "stock_quantity": 50
-    }
-  },
-  {
-    "model": "sales_app.product",
-    "pk": 3,
-    "fields": {
-      "name": "Shock Absorber",
-      "description": "Gas-filled shock absorber for a smoother ride.",
-      "category": "Suspension Parts",
-      "manufacturer": "ABC Motors",
-      "price": 49.99,
-      "stock_quantity": 30
-    }
-  }
 ]
