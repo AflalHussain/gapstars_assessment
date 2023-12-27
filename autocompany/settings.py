@@ -89,8 +89,8 @@ DATABASES = {
         'NAME': os.environ.get('DB_NAME', 'autocompany_db'),
         'USER': os.environ.get('DB_USER', 'autocompany_db_user'),
         'PASSWORD': os.environ.get('DB_PASSWORD', 'password'),
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'HOST': os.environ.get('DB_HOST', 'localhost'),
+        'PORT': os.environ.get('DB_PORT', '5432'),
     }
 }
 
@@ -135,3 +135,8 @@ STATIC_ROOT = f'{BASE_DIR}/static'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10,
+}
